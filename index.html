@@ -13,7 +13,11 @@
 		<script>
 			var onSwitch = function(){
 				if(document.getElementById("vibrationSwitch").checked == true){
-					navigator.vibrate([604800000]);
+					var vibrate = function(){
+						navigator.vibrate([10000]);
+					}
+					setInterval(vibrate, 10000);
+					vibrate();
 				}else{
 					navigator.vibrate(0);
 				}
