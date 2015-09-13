@@ -11,14 +11,16 @@
 			(Not all devices supported)
 		</div>
 		<script>
+			var vibInt = function(){};
 			var onSwitch = function(){
 				if(document.getElementById("vibrationSwitch").checked == true){
 					var vibrate = function(){
 						navigator.vibrate([10000]);
 					}
-					setInterval(vibrate, 10000);
+					vibInt = setInterval(vibrate, 10000);
 					vibrate();
 				}else{
+					clearInterval(vibInt);
 					navigator.vibrate(0);
 				}
 			}
