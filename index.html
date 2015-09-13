@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+
+		<div align="center">	
+			<span style="font-size:400%">Vibration: </span>
+			<input type="checkbox" onchange="onSwitch()" id="vibrationSwitch">
+			</br>
+			(Not all devices supported)
+		</div>
+		<script>
+			var onSwitch = function(){
+				if(document.getElementById("vibrationSwitch").checked == true){
+					navigator.vibrate([604800000]);
+				}else{
+					navigator.vibrate(0);
+				}
+			}
+		</script>
+	</body>
+
+</html>
